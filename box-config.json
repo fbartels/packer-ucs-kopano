@@ -85,11 +85,6 @@
       {
         "output": "builds/{{.Provider}}-debian9.box",
         "type": "vagrant"
-      },
-      {
-        "type": "vagrant-cloud",
-        "box_tag": "geerlingguy/debian9",
-        "version": "{{user `version`}}"
       }
     ]
   ]
