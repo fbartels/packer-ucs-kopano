@@ -51,11 +51,10 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/debian-9.11.0-amd64-xfce-CD-1.iso",
-        "https://cdimage.debian.org/cdimage/archive/9.11.0/amd64/iso-cd/debian-9.11.0-amd64-xfce-CD-1.iso"
+        "https://download.software-univention.de/download/ucs-cds/ucs4.4-3/UCS_4.4-3-amd64.iso"
       ],
-      "iso_checksum_type": "sha256",
-      "iso_checksum": "aeafc6142cb1c8636ba219a7d91339afc0be92adb722f8931bc58194295e307d",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "e1a50a8b859c657b47665f3b7d88c67f",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -63,7 +62,7 @@
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-debian-9-amd64",
+      "vm_name": "packer-ucs44-amd64",
       "vboxmanage": [
         [
           "modifyvm",
@@ -76,7 +75,8 @@
           "{{.Name}}",
           "--cpus",
           "1"
-        ]
+        ],
+        [ "modifyvm", "{{.Name}}", "--vrdeaddress", "0.0.0.0" ]
       ]
     }
   ],
